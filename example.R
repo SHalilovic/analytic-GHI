@@ -41,8 +41,8 @@ I0h<- I0*cos(Z)
 
 
 # Quality-control sequence (based on the available data):
-qual1 <- which((theta*180/pi)<85)     # angle of incidence (AOI) < 85°
-qual2 <- which((gamma_s*180/pi)>5)    # solar elevation angle > 5°
+qual1 <- which((theta*180/pi)<85)     # angle of incidence (AOI) < 85Â°
+qual2 <- which((gamma_s*180/pi)>5)    # solar elevation angle > 5Â°
 qual3 <- which((Gh>0)&(Gc>0))
 qual4 <- which(Gh<(1.5*I0*(cos(Z))^1.2 + 100))
 qual <- intersect(qual1,qual2)
@@ -61,7 +61,7 @@ Gh_sim[qual] <- Gh_sim1 # simulated are set to zero
 
 # Plot results
 plot(time,Gc,cex=0.1,col=alpha("grey"),type="l",ylim=c(0, 900),xlab="Time [h]", 
-     ylab="Gh/Gc [W/m�]")
+     ylab="Gh/Gc [W/m^2]")
 lines(time,Gh,cex=0.1,col=alpha("black"))
 lines(time,Gh_sim,cex=0.1,col=alpha("blue"))
 
