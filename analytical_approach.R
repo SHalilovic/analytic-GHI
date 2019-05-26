@@ -75,49 +75,49 @@ calc.GHI <- function(Gc,time,xcord=8,ycord=48,tilt=25,azimuth=0,albedo=0.2,gamma
   if(version=="A"){
     # Version A of the new model
     
-    y_a1 <- -2E-05*azimuth^2 + 8E-05*azimuth + 0.7635 # y and h are auxiliary variables
+    y_a1 <- -1.79E-05*azimuth^2 + 0.0001*azimuth + 0.7635 # y and h are auxiliary variables
     h_a1 <- -0.0021*tilt + 0.9604
     a1 <- (tilt/90)*(y_a1-0.7635)+h_a1
-    y_b1 <- -5E-05*azimuth^2 - 0.0007*azimuth - 0.5968
-    h_b1 <- 5E-05*tilt^2 - 0.0111*tilt - 0.0191
+    y_b1 <- -4.5E-05*azimuth^2 - 0.0007*azimuth - 0.5968
+    h_b1 <- 5.21E-05*tilt^2 - 0.0111*tilt - 0.0191
     b1 <- (tilt/90)*(y_b1+0.5968)+h_b1
-    y_c1 <- 4E-05*azimuth^2 + 2E-05*azimuth + 0.3956
+    y_c1 <- 4.27E-05*azimuth^2 + 0*azimuth + 0.3956
     h_c1 <- 0.004*tilt + 0.0367
     c1 <- (tilt/90)*(y_c1-0.3956)+h_c1
     
-    y_a2 <- -3E-05*azimuth^2 + 0.0002*azimuth + 0.7784
+    y_a2 <- -2.72E-05*azimuth^2 + 0.0002*azimuth + 0.7784
     h_a2 <- -0.0069*tilt + 1.3824
     a2 <- (tilt/90)*(y_a2-0.7784)+h_a2
-    y_b2 <- 1E-05*azimuth^2 - 0.0013*azimuth - 1.4297
-    h_b2 <- -0.0001*tilt^2 + 0.0149*tilt - 1.8707
+    y_b2 <- 1.49E-05*azimuth^2 - 0.0013*azimuth - 1.4297
+    h_b2 <- -11.15E-05*tilt^2 + 0.0149*tilt - 1.8707
     b2 <- (tilt/90)*(y_b2+1.4297)+h_b2
-    y_c2 <- 3E-05*azimuth^2 + 0.0007*azimuth + 0.7694
-    h_c2 <- 7E-05*tilt^2 - 0.0003*tilt + 0.2692
+    y_c2 <- 3.17E-05*azimuth^2 + 0.0007*azimuth + 0.7694
+    h_c2 <- 6.55E-05*tilt^2 - 0.0003*tilt + 0.2692
     c2 <- (tilt/90)*(y_c2-0.7694)+h_c2
     
-    y_a3 <- -3E-05*azimuth^2 - 0.0002*azimuth + 0.2265
-    h_a3 <- 3E-05*tilt^2 + 0.0008*tilt - 0.049
+    y_a3 <- -3.01E-05*azimuth^2 - 0.0002*azimuth + 0.2265
+    h_a3 <- 2.57E-05*tilt^2 + 0.0008*tilt - 0.049
     a3 <- (tilt/90)*(y_a3-0.2265)+h_a3
-    y_b3 <- 7E-06*azimuth^2 + 0.0008*azimuth + 0.509
-    h_b3 <- -9E-05*tilt^2 + 0.0075*tilt + 0.5763
+    y_b3 <- 0.68E-05*azimuth^2 + 0.0008*azimuth + 0.509
+    h_b3 <- -9.19E-05*tilt^2 + 0.0075*tilt + 0.5763
     b3 <- (tilt/90)*(y_b3-0.509)+h_b3
-    y_c3 <- 4E-05*azimuth^2 - 0.0007*azimuth - 0.4251
-    h_c3 <- 9E-05*tilt^2 - 0.0104*tilt - 0.1947
+    y_c3 <- 3.72E-05*azimuth^2 - 0.0007*azimuth - 0.4251
+    h_c3 <- 8.76E-05*tilt^2 - 0.0104*tilt - 0.1947
     c3 <- (tilt/90)*(y_c3+0.4251)+h_c3
   }else{
     # Version B of the new model
     
-    a1 <- -2E-05*azimuth^2 + 8E-05*azimuth + (-0.0021*tilt + 0.9604)
-    b1 <- -5E-05*azimuth^2 - 0.0007*azimuth + (5E-05*tilt^2 - 0.0111*tilt - 0.0191)
-    c1 <- 4E-05*azimuth^2 + 2E-05*azimuth + (0.004*tilt + 0.0367)
+    a1 <- -1.79E-05*azimuth^2 + 0.0001*azimuth + (-0.0021*tilt + 0.9604)
+    b1 <- -4.5E-05*azimuth^2 - 0.0007*azimuth + (5.21E-05*tilt^2 - 0.0111*tilt - 0.0191)
+    c1 <- 4.27E-05*azimuth^2 + 0*azimuth + (0.004*tilt + 0.0367)
     
-    a2 <- -3E-05*azimuth^2 + 0.0002*azimuth + (-0.0069*tilt + 1.3824)
-    b2 <- 1E-05*azimuth^2 - 0.0013*azimuth + (-0.0001*tilt^2 + 0.0149*tilt - 1.8707)
-    c2 <- 3E-05*azimuth^2 + 0.0007*azimuth + (7E-05*tilt^2 - 0.0003*tilt + 0.2692)
+    a2 <- -2.72E-05*azimuth^2 + 0.0002*azimuth + (-0.0069*tilt + 1.3824)
+    b2 <- 1.49E-05*azimuth^2 - 0.0013*azimuth + (-11.15E-05*tilt^2 + 0.0149*tilt - 1.8707)
+    c2 <- 3.17E-05*azimuth^2 + 0.0007*azimuth + (6.55E-05*tilt^2 - 0.0003*tilt + 0.2692)
     
-    a3 <- -3E-05*azimuth^2 - 0.0002*azimuth + (3E-05*tilt^2 + 0.0008*tilt - 0.049)
-    b3 <- 7E-06*azimuth^2 + 0.0008*azimuth + (-9E-05*tilt^2 + 0.0075*tilt + 0.5763)
-    c3 <- 4E-05*azimuth^2 - 0.0007*azimuth + (9E-05*tilt^2 - 0.0104*tilt - 0.1947)
+    a3 <- -3.01E-05*azimuth^2 - 0.0002*azimuth + (2.57E-05*tilt^2 + 0.0008*tilt - 0.049)
+    b3 <- 0.68E-05*azimuth^2 + 0.0008*azimuth + (-9.19E-05*tilt^2 + 0.0075*tilt + 0.5763)
+    c3 <- 3.72E-05*azimuth^2 - 0.0007*azimuth + (8.76E-05*tilt^2 - 0.0104*tilt - 0.1947)
   }
   
   
